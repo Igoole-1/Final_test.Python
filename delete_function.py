@@ -7,3 +7,4 @@ def delete_note():
             print("Thank you. Note deleted.")
         else:
             print("Sorry. This note cannot be found.")
+            
