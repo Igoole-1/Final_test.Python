@@ -60,7 +60,15 @@ def print_notes():
 
 notes = read_notes()
 
-
+def delete_note():
+    note_id = int(input("Please enter note's id for deleting: "))
+    for note in notes:
+        if note['id'] == note_id:
+            notes.remove(note)
+            save_notes(notes)
+            print("Thank you. Note deleted.")
+        else:
+            print("Sorry. This note cannot be found.")
 
 def action():
     print("Welcome to notes' menu.\n \nPress 1 to get all notes \nPress 2 to get selected note \nPress 3 to add note \nPress 4 to edit note \nPress 5 to delete note \nPress 0 to exit \n")
@@ -84,8 +92,8 @@ def action():
             add_note()
         elif command == '4':
             edit_note()
-        #elif command == '5':
-            #delete_note()
+        elif command == '5':
+            delete_note()
         elif command == '0':
             print("Good bye.")
             break
